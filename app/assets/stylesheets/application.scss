@@ -16,3 +16,14 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+//各ページタイトル//
+ .text-title {
+  border-top:solid 1px #000000;
+  border-bottom:solid 1px #000000;
+  padding-top:15px;
+  padding-bottom:15px;
+  width:240px;
+  margin:0 auto;
+  font-size:20px;
+ }
