@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      post_image: 写真投稿
+    attributes:
+      user:
+        name: 名前
+        profile_image: プロフィール写真
+      post_image:
+        shop_name: お店の名前
+        image: 写真
