@@ -12,9 +12,11 @@
           <p>ユーザーネーム：<%= @post_image.user.name %></p>
           <p>投稿日時:<%= @post_image.created_at.strftime('%Y/%m/%d') %></p>
           <% if @post_image.user == current_user %>
+          <p>
             <%= link_to "編集", edit_post_image_path(@post_image), class: "btn btn-success" %>
             <%= link_to '削除', post_image_path(@post_image), method: :delete, class: "btn btn btn-danger" %>
           <% end %>
+          </p>
           <% if @post_image.favorited_by?(current_user) %>
             <p>
               <%= link_to post_image_favorites_path(@post_image), method: :delete do %>
@@ -29,12 +31,6 @@
             </p>
           <% end %>
           <p>コメント件数:<%= @post_image.post_comments.count %></p>
-        </div>
-      </div>
-
-      <div class = "row">
-        <div class = "col-md-6 text-center">
-
           <% @post_image.post_comments.each do |post_comment| %>
             <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %>
             <%= post_comment.user.name %>
@@ -44,7 +40,13 @@
             <% end %>
           <% end %>
         </div>
-        <div class = "col-md-4 m-3">
+      </div>
+
+      <div class = "row">
+        <div class = "col-md-6 text-center">
+
+        </div>
+        <div class = "col-md-4 m-5">
           <%= form_with(model:[@post_image,@post_comment],local: true) do |f| %>
             <%= f.text_area :comment,rows:'5', placeholder: "コメントをここに" %>
             <%= f.submit '送信', class:"btn btn-info" %>
