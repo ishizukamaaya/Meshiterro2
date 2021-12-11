@@ -1,5 +1,10 @@
 <div class = "container py-5">
   <div class = "row">
-    <h2>meshiterroへようこそ！</h2>
+    <div class = "col-md-7">
+      <h2>meshiterroへようこそ！</h2>
+      <p>ログインまたは新規登録して初めてください</p>
+      <%= link_to "ログイン" , new_user_session_path, class: "btn btn-success mr-5" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-info" %>
+    </div>
   </div>
 </div>
