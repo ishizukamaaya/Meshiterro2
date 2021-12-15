@@ -1,1 +1,26 @@
-<h2>フォローワー</h2>
+<table class = "table">
+  <h2 class = "text-title">フォロワー</h2>
+  <% if @users.exists? %>
+    <thed>
+      <tr>
+        <th>画像</th>
+        <th>名前</th>
+        <th conspan = "3"></th>
+      </tr>
+    </thed>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg") %></td>
+          <td><%= user.name %></td>
+          <td>フォロー数：<%= user.followings.count %></td>
+          <td>フォロワー数：<%= user.followers.count %></td>
+          <td><%= link_to "詳細", user_path(user.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% else %>
+   <p>ユーザーはいません</p>
+  <% end %>
+</table>
+
