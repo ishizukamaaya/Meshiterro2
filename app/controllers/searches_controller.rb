@@ -5,10 +5,11 @@ class SearchesController < ApplicationController
     @range = params[:range]
 
     if @range == "User"
-      @users = User.looks(params[:search], params[:word])
+      @users = User.look(params[:search], params[:word])
     else
       @post_images = PostImage.looks(params[:search], params[:word])
     end
   end
+  
 
 end
