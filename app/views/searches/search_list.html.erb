@@ -1,13 +1,8 @@
-<div class = "container">
-  <h2 class = "text-title text-center">検索結果</h2>
-  <table class = "table">
-    <% if @renge == "User" %>
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-          </tr>
-        <% end %>
-      </tbody>
-  </table>
-</div>
+<% if @model == "user" %>
+  <h3>User検索結果<%= @content %></h3>
+  <%= render "user/search", users: @records %>
+
+<% else @model == "post_image" %>
+  <h3>PostImage検索結果<%= @content %></h3>
+  <%= render "post_image/search", post_images: @records %>
+<% end %>
