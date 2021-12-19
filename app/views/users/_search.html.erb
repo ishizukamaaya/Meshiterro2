@@ -1,0 +1,16 @@
+<table class = "table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody  id="user">
+    <% users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg",size:"40x40" %></td>
+        <td><%= user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

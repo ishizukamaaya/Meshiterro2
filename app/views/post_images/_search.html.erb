@@ -1,0 +1,17 @@
+<table class = "table">
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>shop_name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody  id="post_image">
+    <% post_images.each do |post_image| %>
+      <tr>
+        <td><%= attachment_image_tag post_image, :image, :fill, 40, 40 %></td>
+        <td><%= post_image.shop_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
