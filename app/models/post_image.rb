@@ -12,8 +12,5 @@ class PostImage < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
-  # def PostImage.search(search_word)
-  #   PostImage.where(['category LIKE ?', "#{search_word}"])
-  # end
 
 end
