@@ -5,10 +5,6 @@
       <div class = "m-5">
         <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format:'jpeg',fallback:"no_image.jpg" %>
         <h3><%= @user.name %></h3>
-        <!--userがログインuserだったら-->
-        <% if @user.id == current_user.id %>
-          <p><%= link_to "プロフィール編集", edit_user_path(@user),class: "btn btn-success" %></p>
-        <% end %>
         <table>
           <tr>
             <th>フォロー中</th>
@@ -18,11 +14,7 @@
             <th>フォロワー</th>
             <td><%= link_to @user.followers.count, user_followers_path(@user) %></td>
           </tr>
-
-
         </table>
-
-
         <div class = "mt-3">
           <% if current_user != @user %>
             <% if current_user.following?(@user) %>
@@ -32,16 +24,16 @@
             <% end %>
           <% end %>
         </div>
-
-
+         <!--userがログインuserだったら-->
+        <% if @user.id == current_user.id %>
+          <p><%= link_to "プロフィール編集", edit_user_path(@user),class: "btn btn-success" %></p>
+        <% end %>
       </div>
     </div>
     <div class = "col-md-8 py-5">
       <h2 class = "text-title text-center">投稿一覧</h2>
       <%= render 'post_images/list', post_images: @post_images %>
     </div>
-
-
   </div>
 </div>
 

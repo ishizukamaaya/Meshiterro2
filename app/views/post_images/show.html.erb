@@ -16,9 +16,9 @@
             <%= link_to '削除', post_image_path(@post_image), method: :delete, class: "btn btn btn-danger" %>
           <% end %>
           </p>
-          <p id = "favorite_buttons_<%= @post_image.id %>">
+          <div id = "favorite_buttons_<%= @post_image.id %>">
             <%= render "favorites/favorites", post_image: @post_image %>
-          </p>
+          </div>
           <p>コメント件数:<%= @post_image.post_comments.count %></p>
         </div>
       </div>
