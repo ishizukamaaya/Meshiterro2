@@ -6,7 +6,7 @@
           <thead>
             <th>画像</th>
             <th>名前</th>
-            <th conspan = "3"></th>
+            <th></th>
           </thead>
           <tboby>
             <% @users.each do |user| %>
@@ -15,7 +15,7 @@
                  <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg",size:"40x40" %>
               </td>
               <td><%= user.name %></td>
-              <td><%= link_to "詳細", user_path(user.id) %></td>
+              <td><%= link_to "詳細ページ", user_path(user.id) %></td>
             <% end %>
             </tr>
           </tboby>
