@@ -13,7 +13,7 @@
           <% if @post_image.user == current_user %>
           <p>
             <%= link_to "編集", edit_post_image_path(@post_image), class: "btn btn-success" %>
-            <%= link_to '削除', post_image_path(@post_image), method: :delete, class: "btn btn btn-danger" %>
+            <%= link_to '削除', post_image_path(@post_image), method: :delete, class: "btn btn btn-danger ml-3" %>
           <% end %>
           </p>
           <div id = "favorite_buttons_<%= @post_image.id %>">
