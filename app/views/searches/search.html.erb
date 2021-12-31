@@ -1,10 +1,10 @@
 <div class = "container py-5">
   <% if @model == "user" %>
-    <h3>User検索結果"<%= @content %>"</h3>
+    <h3 class = "text-title text-center mb-5">User検索"<%= @content %>"</h3>
     <%= render 'users/search', users: @records %>
 
   <% else @model == "post_image" %>
-    <h3>PostImage検索結果"<%= @content %>"</h3>
+    <h3 class = "text-title text-center mb-5">PostImage検索"<%= @content %>"</h3>
     <%= render 'post_images/search', post_images: @records %>
   <% end %>
 </div>
