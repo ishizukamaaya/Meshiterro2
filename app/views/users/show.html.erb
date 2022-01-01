@@ -9,13 +9,13 @@
           <tr>
             <th>フォロー中</th>
             <td id = 'following-count_<%= @user.id %>'>
-              <%= link_to @user.followings.count, user_followings_path(@user) %>
+              <%= link_to @user.followings.count, user_followings_path(@user), class:"text-dark" %>
             </td>
           </tr>
           <tr>
             <th>フォロワー</th>
             <td id = 'follower-count_<%= @user.id %>'>
-              <%= link_to @user.followers.count, user_followers_path(@user) %>
+              <%= link_to @user.followers.count, user_followers_path(@user), class:"text-dark" %>
             </td>
           </tr>
         </table>

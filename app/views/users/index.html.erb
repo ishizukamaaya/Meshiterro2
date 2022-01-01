@@ -15,7 +15,7 @@
                  <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "no_image.jpg",size:"40x40" %>
               </td>
               <td><%= user.name %></td>
-              <td><%= link_to "詳細ページ", user_path(user.id) %></td>
+              <td><u><%= link_to "詳細ページ", user_path(user.id), class: "text-dark" %></u></td>
             <% end %>
             </tr>
           </tboby>
