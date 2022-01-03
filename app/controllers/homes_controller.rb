@@ -9,4 +9,7 @@ class HomesController < ApplicationController
   def office
   end
 
+  def privacy
+  end
+
 end
