@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
   get 'homes/about' => 'homes#about'
+  get 'office' =>'homes#office'
+  
 
   resources :post_images do
     resources :post_comments, only:[:create, :destroy]
